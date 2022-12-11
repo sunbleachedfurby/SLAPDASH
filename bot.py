@@ -29,7 +29,7 @@ metdata = json.loads ( r.text )
 metobjectids = ( metdata [ "objectIDs" ] )
 print(metobjectids)
 
-metobjecturl = f"https://collectionapi.metmuseum.org/public/collection/v1/objects/544720"
+metobjecturl = f"https://collectionapi.metmuseum.org/public/collection/v1/objects/{metobjectids[0]}"
 r = requests.get ( metobjecturl )
 image = wget.download(r.json()["primaryImage"], out="/tmp/temp_image.jpg")
 
